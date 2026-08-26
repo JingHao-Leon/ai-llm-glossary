@@ -12,7 +12,7 @@ This page covers 12 fundamental concepts of Large Language Models (LLMs), includ
 
 大语言模型（LLM）是在海量文本数据上训练、拥有数十亿至数万亿参数的深度学习模型，能够理解和生成自然语言。
 
-LLM 通常基于 [Transformer](../README.md#transformer) 架构，通过[预训练](../README.md#预训练pre-training)学习语言的统计规律，可完成对话、写作、翻译、编程、推理等多种任务。代表性模型包括 GPT 系列、Claude、Gemini、Llama、Qwen、DeepSeek 等。相关术语：[基础模型](#基础模型foundation-model)、[参数](#参数parameters)。
+LLM 通常基于 [Transformer](model-architecture.md#transformer) 架构，通过[预训练](training.md#预训练pre-training)学习语言的统计规律，可完成对话、写作、翻译、编程、推理等多种任务。代表性模型包括 GPT 系列、Claude、Gemini、Llama、Qwen、DeepSeek 等。相关术语：[基础模型](#基础模型foundation-model)、[参数](#参数parameters)。
 
 ### Token（词元）
 **英文**：Token | **类别**：基础概念
@@ -26,28 +26,28 @@ Token 是大模型处理文本的最小单位，可以是一个字、一个词�
 
 参数是神经网络中通过训练学习得到的数值权重，决定模型对输入的响应方式。
 
-参数规模是衡量模型能力的重要指标之一，常以 B（十亿）为单位，如 7B、70B、405B。一般而言参数越多模型容量越大，但训练数据质量、架构设计同样关键，小参数模型经过高质量训练也可超越大模型。相关术语：[Scaling Law](../README.md#scaling-law扩展定律)、[模型权重](../README.md#模型权重model-weights)。
+参数规模是衡量模型能力的重要指标之一，常以 B（十亿）为单位，如 7B、70B、405B。一般而言参数越多模型容量越大，但训练数据质量、架构设计同样关键，小参数模型经过高质量训练也可超越大模型。相关术语：[Scaling Law](training.md#scaling-law扩展定律)、[模型权重](ecosystem-engineering.md#模型权重model-weights)。
 
 ### 上下文窗口（Context Window）
 **英文**：Context Window | **类别**：基础概念
 
 上下文窗口是模型单次推理时能够处理的最大 Token 数量，包括输入与输出。
 
-上下文窗口决定了模型能"记住"多少对话历史或文档内容，主流模型的窗口从 8K 扩展到 128K、1M 甚至更长。超出窗口的内容会被截断或遗忘，长文档处理常需配合 [RAG](../README.md#rag检索增强生成) 等技术。相关术语：[Token](#token词元)、[KV Cache](../README.md#kv-cache键值缓存)。
+上下文窗口决定了模型能"记住"多少对话历史或文档内容，主流模型的窗口从 8K 扩展到 128K、1M 甚至更长。超出窗口的内容会被截断或遗忘，长文档处理常需配合 [RAG](rag-retrieval.md#rag检索增强生成) 等技术。相关术语：[Token](#token词元)、[KV Cache](inference-deployment.md#kv-cache键值缓存)。
 
 ### 涌现能力（Emergent Abilities）
 **英文**：Emergent Abilities | **类别**：基础概念
 
 涌现能力是指模型规模扩大到一定程度后突然出现、在小模型中不存在的能力。
 
-典型例子包括上下文学习（In-context Learning）、思维链推理等：当参数量或训练量跨过某个阈值，模型在特定任务上的表现会从随机水平跃升至可用水平。这一现象是 [Scaling Law](../README.md#scaling-law扩展定律) 研究的重要课题，其本质和可预测性仍在争论中。
+典型例子包括上下文学习（In-context Learning）、思维链推理等：当参数量或训练量跨过某个阈值，模型在特定任务上的表现会从随机水平跃升至可用水平。这一现象是 [Scaling Law](training.md#scaling-law扩展定律) 研究的重要课题，其本质和可预测性仍在争论中。
 
 ### 幻觉（Hallucination）
 **英文**：Hallucination | **类别**：基础概念
 
 幻觉是指大模型生成看似合理但事实上错误或无依据内容的现象。
 
-幻觉源于模型基于统计概率生成文本而非检索事实，常见表现包括编造参考文献、虚构事件、错误引用数据等。缓解手段包括 [RAG](../README.md#rag检索增强生成)、引用溯源、降低[温度](#温度temperature)与事实核查，但目前无法彻底消除。
+幻觉源于模型基于统计概率生成文本而非检索事实，常见表现包括编造参考文献、虚构事件、错误引用数据等。缓解手段包括 [RAG](rag-retrieval.md#rag检索增强生成)、引用溯源、降低[温度](#温度temperature)与事实核查，但目前无法彻底消除。
 
 ### 基础模型（Foundation Model）
 **英文**：Foundation Model | **类别**：基础概念
@@ -61,7 +61,7 @@ Token 是大模型处理文本的最小单位，可以是一个字、一个词�
 
 生成式 AI 是能够生成文本、图像、音频、视频等新内容的人工智能技术总称。
 
-与分类、预测等判别式 AI 不同，生成式 AI 学习数据的分布并据此创造新样本。[LLM](#大语言模型llm) 是生成式 AI 在文本模态的核心形态，图像领域的代表则是[扩散模型](../README.md#扩散模型diffusion-model)。
+与分类、预测等判别式 AI 不同，生成式 AI 学习数据的分布并据此创造新样本。[LLM](#大语言模型llm) 是生成式 AI 在文本模态的核心形态，图像领域的代表则是[扩散模型](multimodal.md#扩散模型diffusion-model)。
 
 ### 通用人工智能（AGI）
 **英文**：Artificial General Intelligence (AGI) | **类别**：基础概念

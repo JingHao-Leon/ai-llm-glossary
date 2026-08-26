@@ -6,7 +6,7 @@ Thank you for helping improve this bilingual AI/LLM glossary!
 ## 如何贡献（How to Contribute）
 
 1. Fork 本仓库并创建分支（Fork the repo and create a branch）。
-2. 按下方格式规范编辑 `README.md`。
+2. 按下方格式规范编辑 `docs/` 目录下对应的分类页面（如 `docs/agents.md`）。
 3. 提交 Pull Request，并在描述中说明新增或修改的理由。
 
 ## 术语格式规范（Entry Format）
