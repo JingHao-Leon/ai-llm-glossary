@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录 Prompt 工程（提示工程）相关的 11 个核心术语，包括 System Prompt（系统提示词）、Few-shot、Zero-shot、思维链（CoT）、提示注入（Prompt Injection）与结构化输出等。
-This page covers 11 core terms on prompt engineering, including System Prompt, few-shot prompting, Chain-of-Thought (CoT), prompt injection, and structured output.
+本页面收录 Prompt 工程（提示工程）相关的 12 个核心术语，包括 System Prompt（系统提示词）、Zero-shot、One-shot、Few-shot、思维链（CoT）、提示注入（Prompt Injection）与结构化输出等。
+This page covers 12 core terms on prompt engineering, including System Prompt, zero-shot / one-shot / few-shot prompting, Chain-of-Thought (CoT), prompt injection, and structured output.
 
 ---
 
@@ -26,14 +26,21 @@ System Prompt 是在对话开始前设定模型行为准则、角色与边界的
 
 Few-shot 是在提示中提供少量输入输出示例、让模型通过上下文学习任务模式的方法。
 
-模型无需更新权重即可"照猫画虎"，这是[涌现能力](basic-concepts.md#涌现能力emergent-abilities)中上下文学习的直接应用。示例的代表性与顺序都会显著影响效果，示例通常以 2–8 个为宜。相关术语：[Zero-shot](#zero-shot零样本)。
+模型无需更新权重即可"照猫画虎"，这是[涌现能力](basic-concepts.md#涌现能力emergent-abilities)中上下文学习的直接应用。示例的代表性与顺序都会显著影响效果，示例通常以 2–8 个为宜。相关术语：[Zero-shot](#zero-shot零样本)、[One-shot](#one-shot单样本提示)。
+
+### One-shot（单样本提示）
+**英文**：One-shot Prompting | **类别**：Prompt 工程
+
+One-shot 是在提示中只提供一个输入输出示例、让模型依样完成任务的方法。
+
+它介于 [Zero-shot](#zero-shot零样本) 与 [Few-shot](#few-shot少样本提示) 之间：用一个示例明确任务的输入输出格式与风格，成本低于多样本提示，适合格式要求明确但模式单一的任务。当单个示例不足以覆盖任务变化时，可升级为 Few-shot。
 
 ### Zero-shot（零样本）
 **英文**：Zero-shot | **类别**：Prompt 工程
 
 Zero-shot 是不提供任何示例、仅依靠指令直接让模型完成任务的方式。
 
-经过[指令微调](fine-tuning.md#指令微调instruction-tuning)的现代模型已具备较强的零样本泛化能力，大多数日常任务无需示例即可完成。当零样本效果不佳时，可升级为 [Few-shot](#few-shot少样本提示) 或考虑微调。
+经过[指令微调](fine-tuning.md#指令微调instruction-tuning)的现代模型已具备较强的零样本泛化能力，大多数日常任务无需示例即可完成。当零样本效果不佳时，可升级为 [One-shot](#one-shot单样本提示)、[Few-shot](#few-shot少样本提示) 或考虑微调。
 
 ### CoT（思维链）
 **英文**：Chain-of-Thought (CoT) | **类别**：Prompt 工程
