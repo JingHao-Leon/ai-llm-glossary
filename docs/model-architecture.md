@@ -43,6 +43,7 @@ Transformer 是 2017 年 Google 在论文《Attention Is All You Need》中提�
 GQA 是让多个查询头共享同一组键值头的注意力变体，在模型质量与推理效率之间取得平衡。
 
 它是[多头注意力](#多头注意力multi-head-attention)（MHA）与 MQA（多查询注意力，所有查询头共享一组键值）的折中：GQA 显著减小 [KV Cache](inference-deployment.md#kv-cache键值缓存) 的显存占用、加速解码，而质量损失远小于 MQA。Llama、Qwen 等主流模型均采用 GQA，DeepSeek 系列则使用压缩率更高的 MLA（多头潜在注意力）。
+
 ### 混合专家模型（MoE）
 **英文**：Mixture of Experts (MoE) | **类别**：模型架构
 
@@ -79,6 +80,7 @@ MoE 是一种将模型拆分为多个"专家"子网络、每次只激活其中�
 分词器是将原始文本切分为 Token 序列、并在 Token 与数值 ID 之间双向转换的组件。
 
 主流分词算法包括 BPE（字节对编码）、WordPiece 与 Unigram，词表规模通常在数万到数十万。分词粒度直接影响模型的多语言能力、计算成本与对罕见字符串的处理，是模型设计中容易被忽视但影响深远的一环。相关术语：[Token](basic-concepts.md#token词元)、[词嵌入](#词嵌入embedding)。
+
 ### 词嵌入（Embedding）
 **英文**：Embedding | **类别**：模型架构
 

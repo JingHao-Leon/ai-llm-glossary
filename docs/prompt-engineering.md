@@ -22,6 +22,7 @@ This page covers 13 core terms on prompt engineering, including the Prompt itsel
 Prompt 是用户或系统输入给大模型、用于引导其生成期望输出的文本指令与上下文的总称。
 
 Prompt 可以是一句简单提问，也可以是由角色设定、任务说明、示例与格式约束组成的复杂结构；[Zero-shot](#zero-shot零样本)、[One-shot](#one-shot单样本提示) 与 [Few-shot](#few-shot少样本提示) 都是组织 Prompt 的具体方式。Prompt 的质量直接决定输出质量，围绕它的设计实践即是[提示工程](#提示工程prompt-engineering)。相关术语：[System Prompt](#system-prompt系统提示词)。
+
 ### System Prompt（系统提示词）
 **英文**：System Prompt | **类别**：Prompt 工程
 

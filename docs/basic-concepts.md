@@ -50,6 +50,7 @@ Token 是大模型处理文本的最小单位，可以是一个字、一个词�
 上下文学习是大模型不更新任何参数、仅通过提示中提供的示例现场学会新任务的能力。
 
 它是[涌现能力](#涌现能力emergent-abilities)的代表性表现：[Few-shot](prompt-engineering.md#few-shot少样本提示) 提示之所以有效，正是因为模型能在前向传播中从示例归纳任务模式。上下文学习模糊了"训练"与"推理"的界限，是提示工程有效的理论基础。
+
 ### 幻觉（Hallucination）
 **英文**：Hallucination | **类别**：基础概念
 
@@ -65,6 +66,7 @@ Token 是大模型处理文本的最小单位，可以是一个字、一个词�
 推理模型是专门针对多步推理任务优化、在回答前自动生成长篇内部思维链的大模型。
 
 以 OpenAI o 系列与 DeepSeek-R1 为代表，这类模型在[后训练](training.md#后训练post-training)阶段通过强化学习训练长思维链，用更多的推理时计算（Test-time Compute）换取数学、代码与科学任务上的更高准确率。相关术语：[CoT](prompt-engineering.md#cot思维链)、[GRPO](training.md#grpo组相对策略优化)。
+
 ### 基础模型（Foundation Model）
 **英文**：Foundation Model | **类别**：基础概念
 

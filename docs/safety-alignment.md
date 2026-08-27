@@ -50,6 +50,7 @@ This page covers 12 core terms on AI safety and alignment, including jailbreak, 
 深度伪造是利用生成式 AI 合成足以乱真的人脸、声音或视频、冒充真实人物的伪造内容。
 
 [文生图](multimodal.md#文生图text-to-image)、[文生视频](multimodal.md#文生视频text-to-video) 与语音克隆技术的进步大幅降低了伪造门槛，带来诈骗、谣言与名誉侵害等现实危害。防御手段包括生成内容水印、溯源标准（如 C2PA）与[内容审核](#内容审核content-moderation)，多国已立法要求对 AI 合成内容进行标识。
+
 ### 偏见（Bias）
 **英文**：Bias | **类别**：安全与对齐
 
@@ -72,6 +73,7 @@ This page covers 12 core terms on AI safety and alignment, including jailbreak, 
 数据投毒是攻击者向训练数据中恶意注入样本、使模型习得错误知识或后门行为的攻击手法。
 
 由于[预训练](training.md#预训练pre-training)语料大量来自公开网络，攻击者可通过在网页中埋入特定内容影响模型输出，或在微调数据中植入触发词后门。防御依赖数据来源管控、异常样本检测与[红队测试](#红队测试red-teaming)验证。
+
 ### 可解释性（Interpretability）
 **英文**：Interpretability | **类别**：安全与对齐
 

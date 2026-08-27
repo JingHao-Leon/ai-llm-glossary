@@ -93,6 +93,7 @@ GraphRAG 是将知识图谱引入检索流程、利用实体关系增强多跳�
 Agentic RAG 是由智能体自主决定何时检索、检索什么、以及如何验证检索结果的动态 RAG 范式。
 
 与传统 RAG 固定的"检索-生成"流水线不同，Agentic RAG 让 [Agent](agents.md#智能体agent) 在多轮循环中规划查询、调用多种检索工具、评估结果质量并决定是否再次检索，更适合复杂问题，代价是更高的延迟与调用成本。相关术语：[RAG](#rag检索增强生成)。
+
 ### HyDE（假设性文档嵌入）
 **英文**：Hypothetical Document Embeddings (HyDE) | **类别**：RAG 与检索
 
