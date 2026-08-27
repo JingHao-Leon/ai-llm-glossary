@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录 Prompt 工程（提示工程）相关的 12 个核心术语，包括 System Prompt（系统提示词）、Zero-shot、One-shot、Few-shot、思维链（CoT）、提示注入（Prompt Injection）与结构化输出等。
-This page covers 12 core terms on prompt engineering, including System Prompt, zero-shot / one-shot / few-shot prompting, Chain-of-Thought (CoT), prompt injection, and structured output.
+本页面收录 Prompt 工程（提示工程）相关的 13 个核心术语，包括 Prompt（提示词）、System Prompt（系统提示词）、Zero-shot、One-shot、Few-shot、思维链（CoT）、提示注入（Prompt Injection）与结构化输出等。
+This page covers 13 core terms on prompt engineering, including the Prompt itself, System Prompt, zero-shot / one-shot / few-shot prompting, Chain-of-Thought (CoT), prompt injection, and structured output.
 
 ---
 
@@ -14,6 +14,14 @@ This page covers 12 core terms on prompt engineering, including System Prompt, z
 
 它不改变模型权重，仅通过指令、示例、格式约束与上下文组织来激发模型能力，是成本最低的模型优化手段。常见技巧包括 [Few-shot](#few-shot少样本提示)、[CoT](#cot思维链)、[角色设定](#角色设定role-playing) 与结构化输出约束。
 
+
+
+### Prompt（提示词）
+**英文**：Prompt | **类别**：Prompt 工程
+
+Prompt 是用户或系统输入给大模型、用于引导其生成期望输出的文本指令与上下文的总称。
+
+Prompt 可以是一句简单提问，也可以是由角色设定、任务说明、示例与格式约束组成的复杂结构；[Zero-shot](#zero-shot零样本)、[One-shot](#one-shot单样本提示) 与 [Few-shot](#few-shot少样本提示) 都是组织 Prompt 的具体方式。Prompt 的质量直接决定输出质量，围绕它的设计实践即是[提示工程](#提示工程prompt-engineering)。相关术语：[System Prompt](#system-prompt系统提示词)。
 ### System Prompt（系统提示词）
 **英文**：System Prompt | **类别**：Prompt 工程
 

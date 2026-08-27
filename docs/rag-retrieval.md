@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录 RAG（检索增强生成）与检索相关的 11 个核心术语，包括 Embedding（嵌入）、向量数据库（Vector Database）、Chunking（文本切分）、重排序（Reranking）、混合检索与语义搜索等。
-This page covers 11 core terms on Retrieval-Augmented Generation (RAG), including embeddings, vector databases, chunking, reranking, hybrid search, and semantic search.
+本页面收录 RAG（检索增强生成）与检索相关的 13 个核心术语，包括 Embedding（嵌入）、向量数据库（Vector Database）、Chunking（文本切分）、重排序（Reranking）、混合检索、GraphRAG 与 Agentic RAG 等。
+This page covers 13 core terms on Retrieval-Augmented Generation (RAG), including embeddings, vector databases, chunking, reranking, hybrid search, semantic search, GraphRAG, and Agentic RAG.
 
 ---
 
@@ -77,6 +77,22 @@ Chunking 是将长文档切分为较小片段以便嵌入与检索的预处理�
 
 在 LLM 应用中，知识库通常由文档经 [Chunking](#chunking文本切分)、[Embedding](#embedding嵌入) 后存入[向量数据库](#向量数据库vector-database)构建而成。知识库的覆盖率、新鲜度与切分质量直接决定 RAG 系统的上限。
 
+
+
+### GraphRAG
+**英文**：GraphRAG | **类别**：RAG 与检索
+
+GraphRAG 是将知识图谱引入检索流程、利用实体关系增强多跳问答能力的 RAG 变体。
+
+传统 [RAG](#rag检索增强生成) 按文本块相似度检索，难以回答需要跨文档串联关系的全局性问题；GraphRAG 先从语料抽取实体与关系构建图谱，检索时沿图谱扩展上下文，显著改善"总结全库""A 与 B 有何关联"类问题。该方法由微软于 2024 年开源推广。相关术语：[知识库](#知识库knowledge-base)。
+
+
+### Agentic RAG
+**英文**：Agentic RAG | **类别**：RAG 与检索
+
+Agentic RAG 是由智能体自主决定何时检索、检索什么、以及如何验证检索结果的动态 RAG 范式。
+
+与传统 RAG 固定的"检索-生成"流水线不同，Agentic RAG 让 [Agent](agents.md#智能体agent) 在多轮循环中规划查询、调用多种检索工具、评估结果质量并决定是否再次检索，更适合复杂问题，代价是更高的延迟与调用成本。相关术语：[RAG](#rag检索增强生成)。
 ### HyDE（假设性文档嵌入）
 **英文**：Hypothetical Document Embeddings (HyDE) | **类别**：RAG 与检索
 

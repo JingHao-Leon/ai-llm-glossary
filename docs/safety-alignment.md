@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录 AI 安全与对齐相关的 10 个核心术语，包括对齐（Alignment）、越狱（Jailbreak）、护栏（Guardrails）、红队测试（Red Teaming）、偏见、隐私泄露与宪法 AI 等。
-This page covers 10 core terms on AI safety and alignment, including jailbreak, guardrails, red teaming, bias, privacy leakage, and Constitutional AI.
+本页面收录 AI 安全与对齐相关的 12 个核心术语，包括对齐（Alignment）、越狱（Jailbreak）、护栏（Guardrails）、红队测试（Red Teaming）、深度伪造（Deepfake）、数据投毒（Data Poisoning）、偏见与宪法 AI 等。
+This page covers 12 core terms on AI safety and alignment, including jailbreak, guardrails, red teaming, deepfake, data poisoning, bias, privacy leakage, and Constitutional AI.
 
 ---
 
@@ -42,6 +42,14 @@ This page covers 10 core terms on AI safety and alignment, including jailbreak, 
 
 有害内容的边界因文化、法律与场景而异，是[内容审核](#内容审核content-moderation)与[对齐](#对齐alignment)共同处理的对象。评估通常结合安全基准与人工抽检。相关术语：[偏见](#偏见bias)。
 
+
+
+### 深度伪造（Deepfake）
+**英文**：Deepfake | **类别**：安全与对齐
+
+深度伪造是利用生成式 AI 合成足以乱真的人脸、声音或视频、冒充真实人物的伪造内容。
+
+[文生图](multimodal.md#文生图text-to-image)、[文生视频](multimodal.md#文生视频text-to-video) 与语音克隆技术的进步大幅降低了伪造门槛，带来诈骗、谣言与名誉侵害等现实危害。防御手段包括生成内容水印、溯源标准（如 C2PA）与[内容审核](#内容审核content-moderation)，多国已立法要求对 AI 合成内容进行标识。
 ### 偏见（Bias）
 **英文**：Bias | **类别**：安全与对齐
 
@@ -56,6 +64,14 @@ This page covers 10 core terms on AI safety and alignment, including jailbreak, 
 
 研究表明大模型会记忆训练语料中的邮箱、电话乃至代码密钥，可被针对性攻击提取。防御包括训练数据脱敏、差分隐私训练与输出侧 PII 过滤。应用层还需防止用户数据经 API 外传。相关术语：[护栏](#护栏guardrails)。
 
+
+
+### 数据投毒（Data Poisoning）
+**英文**：Data Poisoning | **类别**：安全与对齐
+
+数据投毒是攻击者向训练数据中恶意注入样本、使模型习得错误知识或后门行为的攻击手法。
+
+由于[预训练](training.md#预训练pre-training)语料大量来自公开网络，攻击者可通过在网页中埋入特定内容影响模型输出，或在微调数据中植入触发词后门。防御依赖数据来源管控、异常样本检测与[红队测试](#红队测试red-teaming)验证。
 ### 可解释性（Interpretability）
 **英文**：Interpretability | **类别**：安全与对齐
 

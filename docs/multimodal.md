@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录多模态（Multimodal）相关的 11 个核心术语，包括视觉语言模型（VLM）、文生图（Text-to-Image）、文生视频（Text-to-Video）、TTS、语音克隆（Voice Cloning）、扩散模型与 CLIP 等。
-This page covers 11 core terms on multimodal AI, including Vision-Language Models (VLM), text-to-image, text-to-video, TTS, voice cloning, diffusion models, and CLIP.
+本页面收录多模态（Multimodal）相关的 12 个核心术语，包括视觉语言模型（VLM）、文生图（Text-to-Image）、文生视频（Text-to-Video）、ASR、TTS、语音克隆（Voice Cloning）、扩散模型与 CLIP 等。
+This page covers 12 core terms on multimodal AI, including Vision-Language Models (VLM), text-to-image, text-to-video, ASR, TTS, voice cloning, diffusion models, and CLIP.
 
 ---
 
@@ -42,6 +42,14 @@ TTS 是将书面文本转换为自然语音的技术，是语音交互系统的�
 
 现代神经 TTS（如 VITS、XTTS、GPT-SoVITS）已能生成接近真人的韵律与情感，并支持流式输出以满足实时对话需求。相关术语：[语音克隆](#语音克隆voice-cloning)。
 
+
+
+### ASR（自动语音识别）
+**英文**：Automatic Speech Recognition (ASR) | **类别**：多模态
+
+ASR 是将语音信号自动转写为文本的技术，是语音交互系统的输入端。
+
+现代 ASR 以 Whisper 等端到端模型为代表，支持多语言并具备较强的抗噪能力，与大模型结合可实现实时字幕、会议纪要与语音指令理解。它与 [TTS](#tts文本转语音) 分别构成语音对话的"耳朵"与"嘴巴"。
 ### 语音克隆（Voice Cloning）
 **英文**：Voice Cloning | **类别**：多模态
 

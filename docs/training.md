@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录大模型训练相关的 12 个核心术语，包括预训练（Pre-training）、后训练（Post-training）、RLHF、DPO、损失函数、梯度下降、学习率、数据清洗与分布式训练（Distributed Training）等。
-This page covers 12 core terms on LLM training, including pre-training, post-training, RLHF, DPO, loss functions, gradient descent, learning rate, data cleaning, and distributed training.
+本页面收录大模型训练相关的 15 个核心术语，包括预训练（Pre-training）、后训练（Post-training）、RLHF、奖励模型、DPO、GRPO、损失函数、梯度下降、学习率、数据清洗、合成数据与分布式训练（Distributed Training）等。
+This page covers 15 core terms on LLM training, including pre-training, post-training, RLHF, reward models, DPO, GRPO, loss functions, gradient descent, learning rate, data cleaning, synthetic data, and distributed training.
 
 ---
 
@@ -28,6 +28,14 @@ RLHF 是利用人类偏好数据训练奖励模型、再用强化学习优化语
 
 典型流程为：收集人类对多个回答的排序 → 训练奖励模型（Reward Model）→ 用 PPO 等算法微调模型使其获得更高奖励。RLHF 是 ChatGPT 等对话模型效果飞跃的关键，但流程复杂、训练不稳定，部分场景已被 [DPO](#dpo直接偏好优化) 替代。相关术语：[对齐](safety-alignment.md#对齐alignment)。
 
+
+
+### 奖励模型（Reward Model）
+**英文**：Reward Model (RM) | **类别**：训练
+
+奖励模型是根据人类偏好数据训练、为模型输出打分以指导对齐的评分模型。
+
+在 [RLHF](#rlhf人类反馈强化学习) 中，它替代真人实时评判：先由人类对多个回答排序，再训练奖励模型拟合这一偏好，最后用强化学习让语言模型最大化奖励得分。奖励模型的质量直接决定对齐全链路效果，[DPO](#dpo直接偏好优化) 则绕过了显式训练奖励模型的环节。
 ### DPO（直接偏好优化）
 **英文**：Direct Preference Optimization (DPO) | **类别**：训练
 
@@ -35,6 +43,14 @@ DPO 是一种无需训练奖励模型、直接在偏好数据对上优化语言�
 
 它将 RLHF 的强化学习问题转化为简单的二分类损失，训练更稳定、实现更简单，已成为开源社区最主流的对齐方法之一。其变体包括 IPO、KTO、ORPO 等。相关术语：[RLHF](#rlhf人类反馈强化学习)、[损失函数](#损失函数loss-function)。
 
+
+
+### GRPO（组相对策略优化）
+**英文**：Group Relative Policy Optimization (GRPO) | **类别**：训练
+
+GRPO 是一种去掉 Critic 价值网络、用同组样本的相对得分估计优势的强化学习算法。
+
+它由 DeepSeek 提出并用于训练 R1 等推理模型：对同一问题采样一组回答，以组内平均奖励为基线计算优势，大幅降低显存与训练成本。GRPO 已成为训练[推理模型](basic-concepts.md#推理模型reasoning-model)的主流 RL 算法。相关术语：[RLHF](#rlhf人类反馈强化学习)、[DPO](#dpo直接偏好优化)。
 ### 损失函数（Loss Function）
 **英文**：Loss Function | **类别**：训练
 
@@ -63,6 +79,14 @@ DPO 是一种无需训练奖励模型、直接在偏好数据对上优化语言�
 
 业界共识是"数据质量决定模型上限"：去重（Deduplication）可防止模型记忆重复片段，质量过滤能显著提升下游表现。主流做法结合规则、分类器与困惑度打分构建清洗流水线，数据配比（Data Mixture）同样是核心机密。
 
+
+
+### 合成数据（Synthetic Data）
+**英文**：Synthetic Data | **类别**：训练
+
+合成数据是由模型而非人类生成、用于训练或微调其他模型（或模型自身）的数据。
+
+它在真实数据稀缺或标注昂贵的场景尤为重要，常见用途包括指令数据扩增、思维链样本生成与对齐数据构造，[知识蒸馏](fine-tuning.md#知识蒸馏distillation)本质上也是一种合成数据方法。合成数据同样需要[数据清洗](#数据清洗data-cleaning)与质量过滤，否则可能放大错误与偏见。
 ### 分布式训练（Distributed Training）
 **英文**：Distributed Training | **类别**：训练
 

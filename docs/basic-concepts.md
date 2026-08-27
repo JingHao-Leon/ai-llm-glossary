@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录 AI 大模型领域 12 个最基础的核心概念，包括大语言模型（LLM）、Token、参数、上下文窗口、涌现能力与幻觉等。
-This page covers 12 fundamental concepts of Large Language Models (LLMs), including Tokens, Parameters, Context Window, Emergent Abilities, and Hallucination.
+本页面收录 AI 大模型领域 14 个最基础的核心概念，包括大语言模型（LLM）、Token、参数、上下文窗口、涌现能力、上下文学习、幻觉与推理模型（Reasoning Model）等。
+This page covers 14 fundamental concepts of Large Language Models (LLMs), including Tokens, Parameters, Context Window, Emergent Abilities, In-context Learning, Hallucination, and Reasoning Models.
 
 ---
 
@@ -42,6 +42,14 @@ Token 是大模型处理文本的最小单位，可以是一个字、一个词�
 
 典型例子包括上下文学习（In-context Learning）、思维链推理等：当参数量或训练量跨过某个阈值，模型在特定任务上的表现会从随机水平跃升至可用水平。这一现象是 [Scaling Law](training.md#scaling-law扩展定律) 研究的重要课题，其本质和可预测性仍在争论中。
 
+
+
+### 上下文学习（In-context Learning）
+**英文**：In-context Learning (ICL) | **类别**：基础概念
+
+上下文学习是大模型不更新任何参数、仅通过提示中提供的示例现场学会新任务的能力。
+
+它是[涌现能力](#涌现能力emergent-abilities)的代表性表现：[Few-shot](prompt-engineering.md#few-shot少样本提示) 提示之所以有效，正是因为模型能在前向传播中从示例归纳任务模式。上下文学习模糊了"训练"与"推理"的界限，是提示工程有效的理论基础。
 ### 幻觉（Hallucination）
 **英文**：Hallucination | **类别**：基础概念
 
@@ -49,6 +57,14 @@ Token 是大模型处理文本的最小单位，可以是一个字、一个词�
 
 幻觉源于模型基于统计概率生成文本而非检索事实，常见表现包括编造参考文献、虚构事件、错误引用数据等。缓解手段包括 [RAG](rag-retrieval.md#rag检索增强生成)、引用溯源、降低[温度](#温度temperature)与事实核查，但目前无法彻底消除。
 
+
+
+### 推理模型（Reasoning Model）
+**英文**：Reasoning Model | **类别**：基础概念
+
+推理模型是专门针对多步推理任务优化、在回答前自动生成长篇内部思维链的大模型。
+
+以 OpenAI o 系列与 DeepSeek-R1 为代表，这类模型在[后训练](training.md#后训练post-training)阶段通过强化学习训练长思维链，用更多的推理时计算（Test-time Compute）换取数学、代码与科学任务上的更高准确率。相关术语：[CoT](prompt-engineering.md#cot思维链)、[GRPO](training.md#grpo组相对策略优化)。
 ### 基础模型（Foundation Model）
 **英文**：Foundation Model | **类别**：基础概念
 

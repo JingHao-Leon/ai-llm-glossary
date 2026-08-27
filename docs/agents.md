@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录智能体（AI Agent）相关的 11 个核心术语，包括 Agent、工具调用（Tool Use）、Function Calling（函数调用）、MCP（模型上下文协议）、ReAct、多智能体、规划（Planning）、记忆（Memory）与反思（Reflection）等。
-This page covers 11 core terms on AI Agents, including tool use, Function Calling, Model Context Protocol (MCP), ReAct, multi-agent systems, planning, memory, and reflection.
+本页面收录智能体（AI Agent）相关的 12 个核心术语，包括 Agent、工具调用（Tool Use）、Function Calling（函数调用）、MCP（模型上下文协议）、ReAct、计算机使用（Computer Use）、多智能体、规划（Planning）、记忆（Memory）与反思（Reflection）等。
+This page covers 12 core terms on AI Agents, including tool use, Function Calling, Model Context Protocol (MCP), ReAct, computer use, multi-agent systems, planning, memory, and reflection.
 
 ---
 
@@ -21,6 +21,14 @@ This page covers 11 core terms on AI Agents, including tool use, Function Callin
 
 LLM 本身无法访问实时数据或执行动作，工具调用补上了这一短板：模型输出结构化的调用请求，由运行时执行后将结果回传模型继续推理。它是 [Agent](#智能体agent) 与现实世界交互的基础。相关术语：[Function Calling](#function-calling函数调用)、[MCP](#mcp模型上下文协议)。
 
+
+
+### 计算机使用（Computer Use）
+**英文**：Computer Use | **类别**：智能体
+
+计算机使用是让 AI 像人一样直接操作图形界面（看屏幕、移动鼠标、点击、键入）来完成任务的能力。
+
+它不依赖专用 API，而是通过截图理解界面并输出操作动作，使 [Agent](#智能体agent) 能操控任意存量软件，Anthropic 于 2024 年率先将其作为模型能力开放。该能力依赖视觉理解，安全上需要沙箱隔离与关键操作确认。相关术语：[工具调用](#工具调用tool-use)、[VLM](multimodal.md#vlm视觉语言模型)。
 ### Function Calling（函数调用）
 **英文**：Function Calling | **类别**：智能体
 

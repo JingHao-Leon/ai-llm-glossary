@@ -2,8 +2,8 @@
 
 > [← 返回术语表首页 / Back to Glossary Home](../README.md)
 
-本页面收录大模型架构相关的 11 个核心术语，包括 Transformer、注意力机制（Attention）、多头注意力、混合专家模型（MoE）、位置编码、层归一化与词嵌入等。
-This page covers 11 core terms on LLM model architecture, including Transformer, Attention, Multi-Head Attention, Mixture of Experts (MoE), Positional Encoding, and Embeddings.
+本页面收录大模型架构相关的 13 个核心术语，包括 Transformer、注意力机制（Attention）、多头注意力、GQA、混合专家模型（MoE）、位置编码、分词器（Tokenizer）与词嵌入等。
+This page covers 13 core terms on LLM model architecture, including Transformer, Attention, Multi-Head Attention, Grouped-Query Attention (GQA), Mixture of Experts (MoE), Positional Encoding, Tokenizer, and Embeddings.
 
 ---
 
@@ -35,6 +35,14 @@ Transformer 是 2017 年 Google 在论文《Attention Is All You Need》中提�
 
 不同头可关注语法、指代、语义等不同维度的信息，拼接后显著增强模型表达能力。后续出现了 MQA、GQA 等共享键值的变体，用于降低推理时的显存占用。相关术语：[KV Cache](inference-deployment.md#kv-cache键值缓存)。
 
+
+
+### GQA（分组查询注意力）
+**英文**：Grouped-Query Attention (GQA) | **类别**：模型架构
+
+GQA 是让多个查询头共享同一组键值头的注意力变体，在模型质量与推理效率之间取得平衡。
+
+它是[多头注意力](#多头注意力multi-head-attention)（MHA）与 MQA（多查询注意力，所有查询头共享一组键值）的折中：GQA 显著减小 [KV Cache](inference-deployment.md#kv-cache键值缓存) 的显存占用、加速解码，而质量损失远小于 MQA。Llama、Qwen 等主流模型均采用 GQA，DeepSeek 系列则使用压缩率更高的 MLA（多头潜在注意力）。
 ### 混合专家模型（MoE）
 **英文**：Mixture of Experts (MoE) | **类别**：模型架构
 
@@ -63,6 +71,14 @@ MoE 是一种将模型拆分为多个"专家"子网络、每次只激活其中�
 
 它为梯度提供了一条"高速公路"，使上百层的深层网络也能稳定训练，是 Transformer 及现代深度网络的标配组件。相关术语：[梯度下降](training.md#梯度下降gradient-descent)。
 
+
+
+### 分词器（Tokenizer）
+**英文**：Tokenizer | **类别**：模型架构
+
+分词器是将原始文本切分为 Token 序列、并在 Token 与数值 ID 之间双向转换的组件。
+
+主流分词算法包括 BPE（字节对编码）、WordPiece 与 Unigram，词表规模通常在数万到数十万。分词粒度直接影响模型的多语言能力、计算成本与对罕见字符串的处理，是模型设计中容易被忽视但影响深远的一环。相关术语：[Token](basic-concepts.md#token词元)、[词嵌入](#词嵌入embedding)。
 ### 词嵌入（Embedding）
 **英文**：Embedding | **类别**：模型架构
 
