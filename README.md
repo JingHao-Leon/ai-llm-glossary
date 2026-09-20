@@ -1,7 +1,13 @@
+<div align="center">
+
 # AI 大模型术语表 | Bilingual AI/LLM Glossary
+
+**中英双语 · 148 个核心术语 · 12 大分类的开源 AI/LLM 术语速查表**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Glossary Terms](https://img.shields.io/badge/Glossary_Terms-148-blue)](#分类导航categories)
+
+</div>
 
 > 一份开源的中英双语 AI 大模型术语表（LLM Glossary），收录 148 个核心术语，按 12 个分类组织，覆盖大语言模型（Large Language Model）的基础概念、模型架构（Transformer / MoE）、预训练与后训练（RLHF / DPO）、微调（Fine-tuning / LoRA / QLoRA）、推理与部署（Inference / 量化 / vLLM）、Prompt 工程、RAG 检索增强生成、智能体（AI Agent / Function Calling / MCP）、多模态（Multimodal / VLM）、评估基准与 AI 安全对齐等关键领域。每个术语提供中英对照名称、一句话定义与简明解释，适合开发者、研究者、产品经理与内容创作者快速查阅，也可作为 AI 工程与学习的基础参考。
 >
@@ -66,6 +72,16 @@ FP16 精度下约需 14–16GB 显存（权重约 14GB 加 [KV Cache](docs/infer
 
 欢迎补充新术语或修正现有条目，请参阅 [CONTRIBUTING.md](CONTRIBUTING.md)。
 Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for the entry format.
+
+## 局限与已知问题（Limitations）
+
+为帮助你正确使用本术语表，以下是它当前的边界与不足：
+
+- **覆盖范围有限，不追求穷举**：全表收录 148 个术语、按 12 个分类组织，聚焦大语言模型与生成式 AI 的主干概念；传统机器学习、具体厂商产品细节以及大量论文级细分术语并未收录，条目取舍带有作者的主观判断，欢迎按 [CONTRIBUTING.md](CONTRIBUTING.md) 补充。
+- **释义为速查深度，不构成系统教程**：每个术语仅一句话定义加一段简明解释，不含数学推导、代码示例与论文引用，不能替代系统学习教材、课程或原始论文。
+- **以中文释义为主**：条目正文解释均为中文，英文仅保留术语名称对照，不适合作为英文读者独立学习的第一参考。
+- **时效性限制**：大模型领域演进极快，条目中的事实性内容（如基准分数、显存估算、许可证条款）可能随时间过期，更新可能滞后于领域进展；发现过时表述欢迎提 Issue 指出。
+- **个人维护，未经系统性同行评审**：内容虽以"准确性优先"为准则整理，仍可能存在定义偏差或译名不统一之处，用于正式场景前请与权威资料交叉核对。
 
 ## 许可证（License）
 
